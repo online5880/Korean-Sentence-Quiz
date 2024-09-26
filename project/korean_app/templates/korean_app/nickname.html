@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>닉네임 설정</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'js/nickname.js' %}"></script>
+</head>
+<body>
+    <div class="container nickname-container">
+        <h1>닉네임 설정</h1>
+        <form id="nickname-form" method="post" action="{% url 'set_nickname' %}">
+            {% csrf_token %}
+            <label for="nickname">닉네임을 입력하세요:</label>
+            <input type="text" id="nickname" name="nickname" required>
+            <button type="submit">퀴즈 시작</button>
+        </form>
+    </div>
+    <script>
+        if (typeof jQuery == 'undefined') {
+            document.getElementById('nickname-form').setAttribute('data-ajax', 'false');
+        }
+    </script>
+</body>
+</html>

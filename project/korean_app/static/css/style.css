@@ -1,0 +1,323 @@
+/* 공통 스타일 */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* 닉네임 설정 페이지 스타일 */
+.nickname-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.nickname-container h1 {
+    text-align: center;
+    color: #333;
+}
+
+#nickname-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#nickname-form label {
+    margin-bottom: 10px;
+}
+
+#nickname-form input[type="text"] {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#nickname-form button[type="submit"] {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#nickname-form button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* 퀴즈 페이지 스타일 */
+.quiz-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.quiz-section, .results-section {
+    margin-bottom: 20px;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+input[type="text"], button {
+    margin-top: 10px;
+    padding: 5px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.right-section {
+    width: 250px;
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-left: 1px solid #ddd;
+}
+
+#toggle-pos-list {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#pos-list {
+    margin-top: 20px;
+}
+
+#pos-list.hidden {
+    display: none;
+}
+
+.info-icon {
+    cursor: help;
+    margin-left: 5px;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 200px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -100px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* 반응형 디자인을 위한 미디어 쿼리 */
+@media (max-width: 768px) {
+    .quiz-container {
+        flex-direction: column;
+    }
+
+    .right-section {
+        width: 100%;
+        border-left: none;
+        border-top: 1px solid #ddd;
+        margin-top: 20px;
+    }
+}
+
+.highlight {
+    background-color: yellow;
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+.correct {
+    color: green;
+    font-weight: bold;
+}
+
+.incorrect {
+    color: red;
+    font-weight: bold;
+}
+
+.results-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.results-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    color: #333;  /* 테이블 내용의 텍스트 색상 설정 */
+}
+
+.results-table th, .results-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.results-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    color: #000;  /* 테이블 헤더의 텍스트 색상을 검정색으로 설정 */
+}
+
+.results-table tr:nth-child(even) {
+    background-color: #f8f8f8;
+}
+
+.results-table tr:hover {
+    background-color: #e8e8e8;
+}
+
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.restart-button {
+    background-color: #4CAF50;
+    color: white;
+    border: 2px solid #4CAF50;
+}
+
+.restart-button:hover {
+    background-color: white;
+    color: #4CAF50;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.restart-button:active {
+    transform: translateY(2px);
+}
+
+.button {
+    display: inline-block;
+    padding: 3px 3px;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.nickname-button {
+    background-color: #4CAF50;
+    color: white;
+    border: 2px solid #4CAF50;
+}
+
+.nickname-button:hover {
+    background-color: white;
+    color: #4CAF50;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.check-button {
+    background-color: #4CAF50;
+    color: white;
+    border: 2px solid #4CAF50;
+}
+
+.check-button:hover {
+    background-color: white;
+    color: #4CAF50;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.button:active {
+    transform: translateY(2px);
+}
+
+.pos-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.pos-item {
+    border-bottom: 1px solid #eee;
+}
+
+.pos-name {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.info-icon {
+    cursor: pointer;
+    color: #3498db;
+}
+
+#pos-description {
+    margin-top: 5px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #333;
+    max-width: 600px;  /* 또는 원하는 너비 */
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    border: 1px solid #e0e0e0;
+}
+
+.hidden {
+    display: none;
+}

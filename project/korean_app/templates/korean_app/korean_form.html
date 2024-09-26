@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>한국어 문법 퀴즈</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'js/quiz.js' %}"></script>
+</head>
+<body>
+    {% csrf_token %}
+    <div class="container quiz-container">
+        <div class="quiz-section">
+            <a href="{% url 'set_nickname' %}" class="button nickname-button">닉네임 변경</a>
+            <h1>한국어 문법 퀴즈</h1>
+            <p>안녕하세요, {{ nickname }}님!</p>
+            <p>문장: <span id="sentence"></span></p>
+            <p>다음 단어의 품사는 무엇일까요? "<span id="quiz-word"></span>"</p>
+            <input type="text" id="user-answer">
+            <input type="hidden" id="correct-answer">
+            <button id="check-answer">정답 확인</button>
+            <p id="result"></p>
+            <p>현재 점수: <span id="score">0</span> / 10</p>
+            <p>남은 문제: <span id="remaining-questions">10</span></p>
+        </div>
+        <div class="results-section">
+            <h2>이전 기록</h2>
+            <table>
+                <tr>
+                    <th>닉네임</th>
+                    <th>점수</th>
+                    <th>소요 시간</th>
+                    <th>완료 시간</th>
+                </tr>
+                {% for result in recent_results %}
+                <tr>
+                    <td>{{ result.nickname }}</td>
+                    <td>{{ result.score }} / 10</td>
+                    <td>{{ result.time_taken }}</td>
+                    <td>{{ result.completed_at|date:"Y-m-d H:i:s" }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <div class="right-section">
+            <button id="toggle-pos-list">품사 목록 펼치기/접기</button>
+            <div id="pos-list" class="hidden">
+                <h2>대답 가능한 품사 목록</h2>
+                <ul class="pos-list">
+                    {% for pos, description in pos_dict.items %}
+                        <li class="pos-item">
+                            <span class="info-icon" data-description="{{ description }}">ℹ️    </span>
+                            <span class="pos-name">{{ pos }}</span>
+                            <p class="pos-description hidden">{{ description }}</p>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
