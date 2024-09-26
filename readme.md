@@ -7,7 +7,7 @@
 
     1. 닉네임 입력칸
     2. 퀴즈 시작 버튼
-
+![alt text](image.png)
 3. 문제 확인 및 정답 확인
     
     <img src="images/main.png" width="75%" height="100%"/>

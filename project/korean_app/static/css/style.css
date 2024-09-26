@@ -321,3 +321,18 @@ th {
 .hidden {
     display: none;
 }
+
+.view-all-results {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.view-all-results:hover {
+    background-color: #45a049;
+}
